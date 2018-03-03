@@ -1,0 +1,39 @@
+/*
+    MAIN CSS OXYCOIN POOL
+*/
+body{
+    background-image: url ( 'https://www.oneseaecosystem.net/wp-content/uploads/sites/2/2017/03/onesea_banner_1-1-2000x1339.jpg' ) ; 
+    background-repeat; no-repeat;
+    background-attachment: fixed;
+}
+{ 
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+.header{
+    color: #FFFFFF;
+    text-align: left;
+    line-height: 80px;
+}
+.title{
+    font-size: 2em;
+    vertical-align: middle;
+    padding-left: 1em;
+}
+.delegate{
+    font-size: 1em;
+    vertical-align: middle;
+    color: #f1b931;
+}
+.oxycoin-logo{
+    height: 80px;
+}
+
+.column-text{
+    font-size: 1.5em;
+}
+.footer{
+    text-align: center;
+    font-size: 0.8em;
+}

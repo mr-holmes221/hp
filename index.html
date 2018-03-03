@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>Welcome to 221B Baker Street</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="https://bootswatch.com/3/slate/bootstrap.min.css" rel="stylesheet"> <!-- bright: flatly, journal, simplex, spacelab; dark: slate, superhero; blue: solar -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="delegateApp" ng-controller="indexCtrl" bgcolor="black">
+<div class="jumbotron">
+<center>
+<h5> Welcome to 221B Baker Street</h5>
+<img src="https://image.ibb.co/kSy2Tx/Datei_05_02_18_22_20_24.jpg" width="800px" class="img-round">
+<div class=""><br> </div>
+<div class="btn-group">
+<div class="btn btn-primary"> <a href="https://explorer.oxycoin.io/address/8390650468634387607X" target="_blank">Delegate info</a></div>
+</div>
+</center>
+</div>
+<div class="container">
+</div>
+<div class="panel panel-success" id="panelstatus">
+                        <div class="panel-heading">
+                                <strong>Info Box</strong>
+                                <button type="button" class="close" data-target="#panelstatus" data-dismiss="alert">
+                                        <span aria-hidden="true">&times;</span>
+                                        <span class="sr-only">Close</span>
+                                </button>
+                        </div>
+                        <div class="panel-body">
+				I am now sharing 90% of my forged Oxys!  
+				<br/>Enjoy :)
+                         </div>
+                </div>
+<div class="panel panel-info" id="panelstats">
+<div class="panel-heading">
+<strong>Stats</strong>
+<button type="button" class="close" data-target="#panelstats" data-dismiss="alert">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">Close</span>
+</button>
+</div>
+<div class="panel-body">
+<div class="row">
+<div class="col-md-4">
+<strong>Rank</strong> {{delegate.rank}}
+</div>
+<div class="col-md-4">
+<strong>Productivity</strong> {{delegate.productivity}}
+</div>
+<div class="col-md-4">
+<strong>Approval</strong> {{delegate.approval}}
+</div>
+</div>
+</div>
+</div>
+<div class="panel panel-info" id="panelpayouts">
+<div class="panel-heading">
+<strong>Payouts</strong>
+<button type="button" class="close" data-target="#panelpayouts" data-dismiss="alert">
+<span aria-hidden="true">&times;</span>
+<span class="sr-only">Close</span>
+</button>
+</div>
+<div class="panel-body">
+<strong>Last</strong> {{lastpayout|date}} <br>
+<strong>Next</strong> {{nextpayout|date}} <br>
+<hr>
+<table class="table table-bordered table-striped table-hover">
+<thead>
+<tr>
+<th>Address</th>
+<th>Share (%)</th>
+<th>Paid (OXY)</th>
+<th>Pending (OXY)</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="acc in (accounts|orderBy:'-pending')">
+<td><a href="https://explorer.oxycoin.io/address/{{acc.address}}" target="_blank">{{acc.address}}</a></td>
+<td>{{acc.share|number:2}}</td>
+<td>{{acc.received|number:4}}</td>
+<td>{{acc.pending|number:4}}</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4> Pending Payouts </h4>
+<table class="table table-bordered table-striped table-hover">
+<thead>
+<tr>
+<th>Address</th>
+<th>Paid (OXY)</th>
+<th>Pending (OXY)</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="acc in (standby|orderBy:'-pending')">
+<td><a href="https://explorer.oxycoin.io/address/{{acc.address}}" target="_blank">{{acc.address}}</a></td>
+<td>{{acc.received|number:4}}</td>
+<td>{{acc.pending|number:4}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<hr>
+<div align="center">
+This software is free software created by Davide Gessa, Forked by Seatrips and Ported to Shift<br>
+<a href="https://github.com/seatrips/delegatepool.seatrips.nl">Fork me on Github</a>
+</div>
+</body>
+</html>
+ 
+ 
+
